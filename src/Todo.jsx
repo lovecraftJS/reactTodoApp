@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Todo extends Component {
   render() {
     return (
-      <div />
+      <div>
+        <h2> Todoshechka </h2>
+      </div>
     );
   }
 }

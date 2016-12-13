@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import TodoList from './TodoList';
 
 class App extends Component {
   render() {
     return (
-      <div />
+      <div>
+        <h1>Hello</h1>
+        <TodoList />
+      </div>
     );
   }
 }
 
-export default App;
+ReactDOM.render(
+  <App />,
+  document.getElementById('app'),
+);

@@ -1,7 +1,7 @@
 {
-  "name": "test-proj",
+  "name": "TodoApp",
   "version": "1.0.0",
-  "description": "test project",
+  "description": "Simple todo-app",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",

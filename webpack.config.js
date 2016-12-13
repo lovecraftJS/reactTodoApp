@@ -8,7 +8,7 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/dev-server',
-        './src/notesApp.jsx'
+        './src/index.jsx'
     ],
     output: {
         publicPath: 'http://localhost:3000/',
@@ -31,13 +31,17 @@ module.exports = {
     resolve: {
         modulesDirectories: ['node_modules', 'bower_components'],
         moduleTemplates: ['*', 'index'],
-        extensions: ['', '.js'],
+        extensions: ['', '.js','.jsx'],
+        loaders: ['babel-loader'],
+
         root: __dirname + '/src'
     },
     resolveLoader: {
         modulesDirectories: ['node_modules', 'bower_components'],
         moduleTemplates: ['*-loader', '*'],
-        extensions: ['', '.js']
+        loaders: ['babel-loader'],
+
+        extensions: ['', '.js','.jsx']
     },
     devServer: {
         host: 'localhost',
@@ -52,6 +56,13 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx$/,
+                exclude: /node_modules/,
+                loaders: ['babel-loader'],
+                include: [
+                    path.resolve(__dirname, 'src')
+            ]},
+            {
+                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: ['babel-loader'],
                 include: [
